@@ -12,7 +12,8 @@ $grey ?= #848484
 $black ?= #0d1118
 $black-bis ?= #050a0e
 $orange ?= #ff8e3c
-$yellow ?= #fcee09
+//$yellow ?= #fcee09
+$yellow ?= $green
 $green ?= #00ff41
 $blue ?= #02d7f2
 $purple ?= #9561d2
@@ -46,7 +47,7 @@ $text-strong ?= $blue
 $body-background-color ?= $scheme-main
 $input-color ?= $text
 $input-placeholder-color ?= rgba($input-color, .8)
-$footer-color ?= $black
+$footer-color ?= $blue
 // #151b22: github顶部导航背景颜色
 $footer-background-color ?= #151b22
 $navbar-background-color ?= #151b22
@@ -61,10 +62,12 @@ $navbar-item-padding-h ?= .5rem
 $card-background-color ?= transparent
 // 小卡片标题颜色
 $menu-label-color ?= $green
-$menu-item-hover-color ?= $black
-$menu-item-hover-background-color ?= $yellow
-$menu-item-active-color ?= $black
-$menu-item-active-background-color ?= $yellow
+// 目录、Archives item的hover、active颜色配置
+$menu-item-hover-color ?= $white
+$menu-item-hover-background-color ?= #0194a7
+$menu-item-active-color ?= $white
+$menu-item-active-background-color ?= #0194a7
+
 $menu-list-border-left ?= 1px solid $text
 $tag-color ?= $black
 $tag-background-color ?= $blue
