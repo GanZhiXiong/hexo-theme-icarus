@@ -339,3 +339,47 @@ article.article
 
       &:hover, &:focus
         background-color: darken($blue, 2.5%)
+
+// 修改后，发布前，需要执行 hexo clean
+.mermaid {
+  background: transparent;
+  // 为了显示更少空白、显示更多内容
+  padding: 0 !important;
+  margin: 0 !important;
+  // 图标居中显示
+  display: flex;
+  justify-content: center;
+
+  .label { // 解决行尾文字显示不全
+    font-weight: normal;
+    font-size: .88rem;
+  }
+
+  .edgePath .path { // 链接的颜色
+    stroke: #02d7f2 !important;
+  }
+
+  .arrowheadPath { // 链接的箭头颜色
+    fill: white !important;
+  }
+
+  .edgeLabel { // 链接上文字的样式
+    background-color: #0d1117 !important;
+    color: white !important;
+  }
+
+  .edgeLabel rect { // 链接上的文字的上下边框
+    opacity: 0.5;
+    background-color: transparent !important;
+    fill: transparent !important;
+  }
+
+  > svg {
+    // 替换原有的最大宽度，居中显示，最终还是注释了，因为不限制高度的话，节点、链接、字体都会变大
+    // max-width: none !important;
+
+    // 解决在窄屏中图表高度很高，上下空白过高的问题，但是会窄屏上图表会整体缩小，文字基本上看不清。注释后可以看清文字。
+    // https://github.com/mermaid-js/mermaid/issues/2160
+    //height: auto;
+  }
+}
