@@ -41,6 +41,10 @@ class Footer extends Component {
                             {showVisitorCounter ? <span id="busuanzi_container_site_uv"
                                 dangerouslySetInnerHTML={{ __html: visitorCounterTitle }}></span> : null}
                         </p>
+                        <a className="is-size-7"
+                           href="http://beian.miit.gov.cn/"
+                           target="_blank"> 粤ICP备2021124782号
+                        </a>
                     </div>
                     <div class="level-end">
                         {Object.keys(links).length ? <div class="field has-addons">
