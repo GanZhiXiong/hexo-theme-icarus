@@ -91,17 +91,26 @@ module.exports = class extends Component {
                     {/* Licensing block */}
                     {!index && article && article.licenses && Object.keys(article.licenses)
                         ? <ArticleLicensing.Cacheable page={page} config={config} helper={helper} /> : null}
+                    <div className="level is-mobile is-flex">
                     {/* Tags */}
-                    {!index && page.tags && page.tags.length ? <div class="article-tags is-size-7 mb-4">
-                        <span class="mr-2">#</span>
-                        {page.tags.map(tag => {
-                            return <a class="link-muted mr-2" rel="tag" href={url_for(tag.path)}>{tag.name}</a>;
+                    {/*{!index && page.tags && page.tags.length ? <div class="article-tags is-size-7 mb-4">*/}
+                    {/*    <span class="mr-2">#</span>*/}
+                    {/*    {page.tags.map(tag => {*/}
+                    {/*        return <a class="link-muted mr-2" rel="tag" href={url_for(tag.path)}>{tag.name}</a>;*/}
+                    {/*    })}*/}
+                    {/*</div> : null}*/}
+                    {page.tags && page.tags.length ? <div class="article-tags is-size-7">
+                        <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                        {page.tags.map((tag, index) => {
+                            const a = <a class="link-muted" rel="tag" href={url_for(tag.path)}>{tag.name}</a>;
+                            return index !== page.tags.length-1 ? <div>{a}<span>,&nbsp;&nbsp;&nbsp;</span></div> : a;
                         })}
                     </div> : null}
                     {/* "Read more" button */}
                     {index && page.excerpt ? <a class="article-more button is-small is-size-7" href={`${url_for(page.link || page.path)}#more`}>{__('article.more')}</a> : null}
                     {/* Share button */}
                     {!index ? <Share config={config} page={page} helper={helper} /> : null}
+                    </div>
                 </article>
             </div>
             {/* Donate button */}
