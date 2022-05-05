@@ -91,6 +91,7 @@ module.exports = class extends Component {
                     {/* Licensing block */}
                     {!index && article && article.licenses && Object.keys(article.licenses)
                         ? <ArticleLicensing.Cacheable page={page} config={config} helper={helper} /> : null}
+                    {/*优化文章结尾布局：https://www.alphalxy.com/2019/03/customize-icarus/#:~:text=attr(%27datetime%27)).fromNow())%3B%0A%2D%20%20%20%20%20%20%20%20%7D)%3B%0A%2D%20%20%20%20%7D-,%E4%BC%98%E5%8C%96%E6%96%87%E7%AB%A0%E7%BB%93%E5%B0%BE%E5%B8%83%E5%B1%80,-%E5%9C%A8%E6%96%87%E7%AB%A0%E7%BB%93%E5%B0%BE*/}
                     <div className="level is-mobile is-flex">
                     {/* Tags */}
                     {/*{!index && page.tags && page.tags.length ? <div class="article-tags is-size-7 mb-4">*/}
